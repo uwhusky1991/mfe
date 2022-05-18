@@ -5,7 +5,7 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 
-import Progress from './components/Progress'
+import progress from './components/progress'
 import Header from './components/Header';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
@@ -22,7 +22,7 @@ export default () => {
       <StylesProvider generateClassName={generateClassName}>
         <div>
           <Header isSignedIn={isSignedIn} onSignOut={() => setIsSignedIn(false)} />
-          <Suspense fallback={<Progress />}>
+          <Suspense fallback={<progress />}>
             <Switch>
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
