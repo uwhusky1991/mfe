@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core/styles';
 import { createBrowserHistory } from 'history';
 
-import Progress from './components/Progress';
+import progress from './components/progress';
 import Header from './components/Header';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
@@ -36,7 +36,7 @@ export default () => {
             onSignOut={() => setIsSignedIn(false)}
             isSignedIn={isSignedIn}
           />
-          <Suspense fallback={<Progress />}>
+          <Suspense fallback={<progress />}>
             <Switch>
               <Route path="/auth">
                 <AuthLazy onSignIn={() => setIsSignedIn(true)} />
